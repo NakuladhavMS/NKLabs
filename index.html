@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Startup Name — Tagline</title>
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --card-bg: #141418;
+      --border: #26262e;
+      --text: #ededed;
+      --text-muted: #8e8ea0;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    nav {
+      width: 100%;
+      max-width: 900px;
+      padding: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.5px; }
+    main {
+      width: 100%;
+      max-width: 700px;
+      margin: auto 0;
+      text-align: center;
+      padding: 4rem 0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1.2rem;
+    }
+    p.lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 540px;
+      margin-inline: auto;
+    }
+    .cta-box {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    input[type="email"] {
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 0.95rem;
+      width: 260px;
+      outline: none;
+    }
+    input[type="email"]:focus { border-color: var(--primary); }
+    button {
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    button:hover { background: var(--primary-hover); }
+    footer {
+      width: 100%;
+      max-width: 900px;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">ProjectName</div>
+    <a href="https://github.com" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">GitHub &rarr;</a>
+  </nav>
+
+  <main>
+    <span class="badge">Early Access Coming Soon</span>
+    <h1>The fastest way to solve your specific problem.</h1>
+    <p class="lead">Explain the core outcome in one punchy sentence. No fluff, just the exact utility your product provides.</p>
+    
+    <!-- Replace the form action with Formspree, Formkeep, or Google Forms to collect emails -->
+    <form class="cta-box" action="https://formspree.io/f/your_form_id" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Join Waitlist</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2026 ProjectName. Built for builders.
+  </footer>
+
+</body>
+</html>
