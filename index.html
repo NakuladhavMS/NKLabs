@@ -3,130 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Startup Name — Tagline</title>
+  <title>NKLabs — High-Performance Computational CAD/CAE Infrastructure</title>
+  <meta name="description" content="NKLabs develops next-generation geometric engines, persistent topology naming solutions, and high-efficiency CAD/CAE infrastructure.">
   <style>
     :root {
-      --bg: #0a0a0c;
-      --card-bg: #141418;
-      --border: #26262e;
-      --text: #ededed;
-      --text-muted: #8e8ea0;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
+      --bg: #0b0f17;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --border-accent: #374151;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --code-bg: #030712;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       padding: 0 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
+    }
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
     }
     nav {
-      width: 100%;
-      max-width: 900px;
       padding: 2rem 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid var(--card-border);
     }
-    .logo { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.5px; }
-    main {
-      width: 100%;
-      max-width: 700px;
-      margin: auto 0;
+    .logo {
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo span {
+      color: var(--accent);
+    }
+    .nav-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+    }
+    header.hero {
+      padding: 5rem 0 4rem;
       text-align: center;
-      padding: 4rem 0;
     }
     .badge {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--border-accent);
+      background: var(--accent-glow);
       border-radius: 9999px;
       font-size: 0.8rem;
-      color: var(--text-muted);
+      font-weight: 500;
+      color: #bfdbfe;
       margin-bottom: 1.5rem;
     }
     h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
       line-height: 1.15;
       font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 1.2rem;
+      letter-spacing: -1.2px;
+      margin-bottom: 1.5rem;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     p.lead {
       font-size: 1.15rem;
       color: var(--text-muted);
-      margin-bottom: 2rem;
-      max-width: 540px;
-      margin-inline: auto;
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
     }
-    .cta-box {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .flagship-card {
+      background: linear-gradient(180deg, rgba(31, 41, 55, 0.4) 0%, rgba(17, 24, 39, 0.8) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
     }
-    input[type="email"] {
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      color: var(--text);
-      font-size: 0.95rem;
-      width: 260px;
-      outline: none;
+    .flagship-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
     }
-    input[type="email"]:focus { border-color: var(--primary); }
-    button {
-      padding: 0.8rem 1.4rem;
-      border-radius: 8px;
-      border: none;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background 0.15s ease;
+    .flagship-card h2 {
+      font-size: 2rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
     }
-    button:hover { background: var(--primary-hover); }
-    footer {
-      width: 100%;
-      max-width: 900px;
-      padding: 2rem 0;
-      text-align: center;
-      font-size: 0.85rem;
+    .flagship-card p {
       color: var(--text-muted);
-      border-top: 1px solid var(--border);
+      max-width: 800px;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+    .metrics {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+    }
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-val {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .metric-lbl {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
+      margin: 4rem 0 1.5rem;
+      font-weight: 700;
+    }
+    .suite-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .suite-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .suite-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.3px;
+    }
+    .suite-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+    .suite-highlight {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      width: fit-content;
+    }
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 3rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      flex-wrap: gap;
+      gap: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="logo">ProjectName</div>
-    <a href="https://github.com" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">GitHub &rarr;</a>
-  </nav>
+  <div class="container">
+    <nav>
+      <div class="logo">NK<span>Labs</span></div>
+      <div class="nav-tag">Engineering Infrastructure</div>
+    </nav>
 
-  <main>
-    <span class="badge">Early Access Coming Soon</span>
-    <h1>The fastest way to solve your specific problem.</h1>
-    <p class="lead">Explain the core outcome in one punchy sentence. No fluff, just the exact utility your product provides.</p>
-    
-    <!-- Replace the form action with Formspree, Formkeep, or Google Forms to collect emails -->
-    <form class="cta-box" action="https://formspree.io/f/your_form_id" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <button type="submit">Join Waitlist</button>
-    </form>
-  </main>
+    <header class="hero">
+      <div class="badge">Next-Generation Engineering Systems</div>
+      <h1>High-Performance Infrastructure for <span>CAD & CAE</span></h1>
+      <p class="lead">
+        Architecting fundamental computational primitives, persistent geometric matching, and dense storage reduction frameworks for modern engineering platforms.
+      </p>
+    </header>
 
-  <footer>
-    &copy; 2026 ProjectName. Built for builders.
-  </footer>
+    <!-- Flagship Product -->
+    <div class="flagship-card">
+      <span class="flagship-tag">Flagship Solution</span>
+      <h2>OptiForge</h2>
+      <p>
+        Solving the foundational <strong>Topological Naming Problem</strong> in parametric modeling. OptiForge provides deterministic geometric identity tracking and topology-aware diffing, ensuring robust downstream feature stability across iterative design and generative updates.
+      </p>
+      <div class="metrics">
+        <div class="metric-item">
+          <span class="metric-val">Deterministic</span>
+          <span class="metric-lbl">Persistent Face/Edge Identity</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-val">Zero-Drift</span>
+          <span class="metric-lbl">Parametric Re-evaluation</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-val">B-Rep Native</span>
+          <span class="metric-lbl">Geometry Engine Agnostic</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Suite -->
+    <div class="section-title">The OptiSuite Ecosystem</div>
+    <div class="suite-grid">
+      
+      <div class="suite-card">
+        <div>
+          <h3>OptiStore</h3>
+          <p>
+            Next-gen CAD & CAE serialized data engine. Re-architects boundary representation and dense mesh serialization to compress geometric and simulation datasets significantly below standard formats.
+          </p>
+        </div>
+        <span class="suite-highlight">60% &ndash; 80% Reduced ROM Footprint</span>
+      </div>
+
+      <div class="suite-card">
+        <div>
+          <h3>OptiSolve</h3>
+          <p>
+            Accelerated numerical solver orchestration designed for computational simulation pipelines, streamlining memory utilization and compute overhead on complex geometric topologies.
+          </p>
+        </div>
+        <span class="suite-highlight">Simulation Acceleration</span>
+      </div>
+
+      <div class="suite-card">
+        <div>
+          <h3>OptiWork</h3>
+          <p>
+            Collaborative, version-controlled workspace orchestrator integrating CAD automation, geometry verification, and model interchange across multi-disciplinary engineering teams.
+          </p>
+        </div>
+        <span class="suite-highlight">Engineering Pipeline Automation</span>
+      </div>
+
+    </div>
+
+    <footer>
+      <div>&copy; 2026 NKLabs. Computational design research, development, and services.</div>
+      <div>Chennai, India</div>
+    </footer>
+  </div>
 
 </body>
 </html>
